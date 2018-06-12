@@ -30,11 +30,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 import 'hammerjs';
+import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainNavbarComponent
   ],
   imports: [
     AppRoutingModule,
