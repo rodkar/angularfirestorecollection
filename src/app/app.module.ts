@@ -31,12 +31,18 @@ import { RouterModule } from '@angular/router';
 
 import 'hammerjs';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
+import { TitlesComponent } from './titles/titles.component';
+import { TitleListComponent } from './titles/title-list/title-list.component';
+import { TitleComponent } from './titles/title/title.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavbarComponent
+    MainNavbarComponent,
+    TitlesComponent,
+    TitleListComponent,
+    TitleComponent
   ],
   imports: [
     AppRoutingModule,
@@ -65,7 +71,9 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
     MatGridListModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-      
+      { path: 'titles', component: TitlesComponent },
+      { path: 'titles/new', component: TitleComponent },
+      { path: 'titles/edit/:id', component: TitleComponent }
     ])
   ],
   providers: [],

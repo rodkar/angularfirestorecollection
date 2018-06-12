@@ -1,0 +1,22 @@
+<div *ngIf="titleList$; else noTitles">
+  <mat-list role="list" *ngFor="let title of titleList$ | async">
+    <mat-list-item role="listitem">
+      <div fxFlex="20%">{{title.title_en}}</div>
+      <div fxFlex="20%">{{title.title_tc}}</div>
+      <div fxFlex="20%">{{title.title_sc}}</div>
+      <div fxFlex="20%">{{title.title_jp}}</div>
+
+      <button fxFlex="10%" mat-button color="accent" [routerLink]="['/titles/edit/', title.id]">
+        <i class="material-icons">border_color</i>
+      </button>
+
+      <button fxFlex="10" mat-button color="warn" (click)="delete($event, title)">
+        <i class="material-icons">delete</i>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<ng-template #noTitles>
+  <h5>There is no title yet.</h5>
+</ng-template>

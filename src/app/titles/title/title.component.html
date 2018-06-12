@@ -1,0 +1,79 @@
+<div *ngIf="id; else newTitle">
+  <form #editTitleForm="ngForm" *ngIf="title$ | async as title" (ngSubmit)="onSubmit(editTitleForm.value)">
+    <mat-card>
+      <mat-card-title>
+        Edit Title
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="5%">
+          <div fxFlex="10%"></div>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_en" #title_en="ngModel" [(ngModel)]="title.title_en" placeholder="English" required>
+            <p color="warn" *ngIf="title_en.touched && title_en.invalid">Required!</p>
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_tc" title_tc="ngModel" [(ngModel)]="title.title_tc" placeholder="Traditional Chinese">
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_sc" title_sc="ngModel" [(ngModel)]="title.title_sc" placeholder="Simplified Chinese">
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_jp" title_jp="ngModel" [(ngModel)]="title.title_jp" placeholder="Japanese">
+          </mat-form-field>
+          <div fxFlex="10%"></div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row">
+        <div fxFlex="20%"></div>
+        <button fxFlex="20%" mat-raised-button type="submit" color="primary" [disabled]="editTitleForm.form.invalid">
+          <i class="material-icons">save</i>
+        </button>
+        <div fxFlex="20%"></div>
+        <button fxFlex="20%" mat-raised-button type="button" color="accent" (click)="cancel()">
+          <i class="material-icons">cancel</i>
+        </button>
+        <div fxFlex="20%"></div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+
+<ng-template #newTitle>
+  <form #newTitleForm="ngForm" (ngSubmit)="onSubmit(newTitleForm.value)">
+    <mat-card>
+      <mat-card-title>
+        New Title
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="5%">
+          <div fxFlex="10%"></div>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_en" #title_en="ngModel" [(ngModel)]="title.title_en" placeholder="English" required>
+            <p color="warn" *ngIf="title_en.touched && title_en.invalid">Required!</p>
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_tc" title_tc="ngModel" [(ngModel)]="title.title_tc" placeholder="Traditional Chinese">
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_sc" title_sc="ngModel" [(ngModel)]="title.title_sc" placeholder="Simplified Chinese">
+          </mat-form-field>
+          <mat-form-field fxFlex="15%">
+            <input matInput name="title_jp" title_jp="ngModel" [(ngModel)]="title.title_jp" placeholder="Japanese">
+          </mat-form-field>
+          <div fxFlex="10%"></div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row">
+        <div fxFlex="20%"></div>
+        <button fxFlex="20%" mat-raised-button type="submit" color="primary" [disabled]="newTitleForm.form.invalid">
+          <i class="material-icons">save</i>
+        </button>
+        <div fxFlex="20%"></div>
+        <button fxFlex="20%" mat-raised-button type="button" color="accent" (click)="cancel()">
+          <i class="material-icons">cancel</i>
+        </button>
+        <div fxFlex="20%"></div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</ng-template>
