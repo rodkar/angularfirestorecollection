@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: "AIzaSyBltGLh3aXdkfkOJ-wFbtRKoYgNk5gjrA4",
-    authDomain: "project-4657261964588487482.firebaseapp.com",
-    databaseURL: "https://project-4657261964588487482.firebaseio.com",
-    projectId: "project-4657261964588487482",
-    storageBucket: "project-4657261964588487482.appspot.com",
-    messagingSenderId: "294259727366"
+    apiKey: "AIzaSyAz1E7DRfF6FVYzSh9sBx-ICvaeB3X4-OA",
+    authDomain: "gallery-fb2f9.firebaseapp.com",
+    databaseURL: "https://gallery-fb2f9.firebaseio.com",
+    projectId: "gallery-fb2f9",
+    storageBucket: "gallery-fb2f9.appspot.com",
+    messagingSenderId: "411653456512"
   }
 };
