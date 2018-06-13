@@ -34,6 +34,7 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { TitlesComponent } from './titles/titles.component';
 import { TitleListComponent } from './titles/title-list/title-list.component';
 import { TitleComponent } from './titles/title/title.component';
+import { TitleService } from './services/title.service';
 
 
 @NgModule({
@@ -76,7 +77,7 @@ import { TitleComponent } from './titles/title/title.component';
       { path: 'titles/edit/:id', component: TitleComponent }
     ])
   ],
-  providers: [],
+  providers: [TitleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

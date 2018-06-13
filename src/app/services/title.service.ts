@@ -15,14 +15,14 @@ export class TitleService {
 
   constructor(private firebase: AngularFirestore) {
     this.titlesCollection = this.firebase.collection('titles', ref => ref.orderBy('title_en'));
-    
+
     this.titles = this.titlesCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Title;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
-    )
+    );
   }
 
   getAll() {
